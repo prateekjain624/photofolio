@@ -1,0 +1,100 @@
+.imagelistTop {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-block: 30px;
+}
+
+.imagelistTop span {
+  align-items: center;
+  aspect-ratio: 1;
+  background-color: #fcfcfc;
+  border-radius: 50%;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.24);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  margin-right: 30px;
+  width: 50px;
+}
+
+.imagelistTop span img {
+  width: 30px;
+}
+
+.imagelistTop h3 {
+  font-size: 1.7rem;
+  font-weight: 700;
+}
+
+.imagelistSearch {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  margin-left: auto;
+  margin-right: 30px;
+}
+
+.imagelistSearch img {
+  cursor: pointer;
+  width: 30px;
+}
+
+.imagelistTop button {
+  background-color: rgba(0, 119, 255, 0.1);
+  border: 2px solid #07f;
+  border-radius: 5px;
+  color: #07f;
+  cursor: pointer;
+  font-weight: 700;
+  outline: none;
+  padding: 5px 10px;
+}
+
+.imageList {
+  grid-gap: 20px;
+  display: grid;
+  gap: 20px;
+  grid-auto-flow: row;
+  grid-auto-rows: 150px;
+  grid-template: repeat(1, 150px) / repeat(auto-fit, minmax(175px, 0.5fr));
+  margin-bottom: 50px;
+}
+
+.imageListImage {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px 0 rgba(99, 99, 99, 0.2);
+  box-sizing: border-box;
+  cursor: pointer;
+  height: 100%;
+  padding: 10px;
+  position: relative;
+  width: 100%;
+}
+
+.imageList .update,
+.imageList .delete {
+  border: none;
+  /* display: none; */
+  outline: none;
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  transition: 0.3s;
+}
+
+.imageList .update {
+  right: 30px;
+}
+
+.imageList .update img,
+.imageList .delete img {
+  width: 30px;
+}
+
+.imageListImage img {
+  height: 80%;
+  object-fit: contain;
+  width: 100%;
+}

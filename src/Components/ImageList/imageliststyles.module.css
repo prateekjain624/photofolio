@@ -51,6 +51,12 @@
   padding: 5px 10px;
 }
 
+.imagelistTop .active {
+  background-color: rgba(255, 19, 0, 0.1);
+  border: 2px solid #ff1300;
+  color: #ff1300;
+}
+
 .imageList {
   grid-gap: 20px;
   display: grid;
@@ -76,12 +82,16 @@
 .imageList .update,
 .imageList .delete {
   border: none;
-  /* display: none; */
+  display: none;
   outline: none;
   position: absolute;
   right: -10px;
   top: -10px;
   transition: 0.3s;
+}
+
+.imageList .active {
+  display: block;
 }
 
 .imageList .update {
@@ -94,7 +104,24 @@
 }
 
 .imageListImage img {
-  height: 80%;
-  object-fit: contain;
+  height: 100%;
+  object-fit: cover;
   width: 100%;
+}
+
+.loaderContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #fff;
+  border-bottom-color: #ff3d00;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  margin-top: 100px;
 }

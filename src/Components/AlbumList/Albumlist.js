@@ -10,11 +10,9 @@ import { db } from "../../fireebaseinit";
 import {
   collection,
   addDoc,
-  setDoc,
   getDocs,
   query,
   orderBy,
-  onSnapshot,
   deleteDoc,
   doc,
 } from "firebase/firestore";
@@ -26,7 +24,6 @@ const Albumlist = () => {
   const [albums, setAlbums] = useState([]);
   const [loading, setLoading] = useState(false);
   const [selectedAlbum, setSelectedAlbum] = useState(null);
-  const toastDisplayed = useRef(false);
 
   const fetchAlbums = async () => {
     const q = query(collection(db, "albums"), orderBy("createdAt", "desc"));
@@ -123,7 +120,11 @@ const Albumlist = () => {
       ) : albums.length === 0 ? (
         <p className={Albumliststyles.NoALbum}>No albums available</p>
       ) : selectedAlbum ? (
-        <Albumimages handleBack={handleBack} title={selectedAlbum.albumTitle} />
+        <Albumimages
+          handleBack={handleBack}
+          albumId={selectedAlbum.albumId}
+          title={selectedAlbum.albumTitle}
+        />
       ) : (
         <div className={Albumliststyles.albumList}>
           {albums.map((album) => (
